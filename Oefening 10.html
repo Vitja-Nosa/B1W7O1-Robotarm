@@ -10,22 +10,21 @@
             robotArm.loadLevel("exercise 10");
             robotArm.speed = 300
 
-                
-                
-            for (var a = 9; a > 0; a--) {
+            var movement = 9
 
-                robotArm.grab();
-
-                for (var right = 0; right < a; right++) {
+        for (var loop = 0; loop < 5; loop++) {
+            robotArm.grab();
+            for (var right = 0; right < movement; right++) {
                 robotArm.moveRight();
-                }
-
-                robotArm.drop();
-                
-                for (var left = 0; left < a; left++) {
-                robotArm.moveLeft();
-                }
             }
+            robotArm.drop();
+            movement--
+            for (var left = 0; left < movement; left++) {
+                robotArm.moveLeft();
+            }
+            movement--
+        }
+
 
 
 
